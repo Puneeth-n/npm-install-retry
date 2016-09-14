@@ -10,10 +10,11 @@ module.exports = function (command, args, options, callback) {
     process.env.npm_config_color = 0;
 
     var attempt = exec(runCmd, function (err, stdout, stderr) {
+        console.log('=============================START===============================')
+        console.log(stdout)
         console.log('=================================================================')
-        console.log('puneeth', stdout)
-        console.log('puneeth', stderr)
-        console.log('=================================================================')
+        console.log(stderr)
+        console.log('=============================END=================================')
       if (
           stdout.match(/npm ERR\! cb\(\) never called\!/ig) || stderr.match(/npm ERR\! cb\(\) never called\!/ig) ||
           stdout.match(/npm ERR\! errno ECONNRESET/ig) || stderr.match(/npm ERR\! errno ECONNRESET/ig)
